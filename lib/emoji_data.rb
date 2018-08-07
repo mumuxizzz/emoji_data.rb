@@ -180,12 +180,15 @@ module EmojiData
     EMOJICHAR_KEYWORD_MAP[short_name.downcase]
   end
 
+  def self.find_by_softbank(softbank)
+    self.find_by_value(:softbank, softbank)
+  end
+
   # alias old method names for legacy apps
   class << self
     alias_method :find_by_unified, :from_unified
     alias_method :find_by_str, :scan
   end
-
 
   protected
 
