@@ -193,7 +193,7 @@ module EmojiData
   protected
 
   def self.find_by_value(field,value)
-    self.all.select { |char| char.send(field).include? value }
+    self.all.select { |char| char.send(field)&.include? value }
   end
 
 end
